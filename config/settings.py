@@ -118,5 +118,3 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/'
-
-DATE_INPUT_FORMATS = ['%d-%m-%Y']
