@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container mt-5 text-left" style='width:500px'>
+    <div>
+        <h1 class="font-weight-bold">{{ restaurants.restaurant_name }}</h1>
+        <h3 style="margin-top: 30px;">{{ restaurants.location }}</h3>
+        <h3 style="margin-top: 30px;">{{ restaurants.event }}</h3>
+    </div>
+
+    {% comment %} <h1>{{ restaurant.restaurant_name }}</h1> {% endcomment %}
+    <div>
+        {% for reviews in reviews %}
+        <table class="table">
+            <tr>
+                <td>{{ menu.rating }}</td>
+            </tr>
+            <tr>
+                <td>{% include 'review_list.html' %}</td>
+            </tr>
+        </table>
+    </div>
+    {% endfor %}
+    
+<div class="text-lg-end text-right">
+    <a href="{% url 'restaurant:restaurant_review' restaurant.id %}" class="btn btn-success">리뷰 작성하기</a>
+</div>
+{% endblock %}
+
+
+
